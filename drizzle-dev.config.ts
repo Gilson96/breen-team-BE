@@ -13,7 +13,7 @@ export default defineConfig({
   schema: './db/data/schema',
   dialect: 'postgresql',
   dbCredentials: {
-    url: process.env.DATABASE_URL!
+    url: process.env.POSTGRES_URL!
   },
   verbose: true
 });

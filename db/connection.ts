@@ -1,5 +1,5 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
-
+import { sql } from '@vercel/postgres';
 import dotenv from 'dotenv';
 import path from 'path';
 
@@ -18,5 +18,5 @@ if (!process.env.DATABASE_URL) {
   console.log('Connected to:', process.env.DATABASE_URL);
 }
 
-const db = drizzle(process.env.DATABASE_URL!);
+const db = drizzle({ client: sql });
 export default db;
